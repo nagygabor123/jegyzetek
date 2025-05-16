@@ -22,7 +22,7 @@ GET
 ```
 POST 
 ```bash
-http://localhost:3000/api/ingatlan
+http://localhost:3000/api/ujingatlan
 ```
 
 ```bash
