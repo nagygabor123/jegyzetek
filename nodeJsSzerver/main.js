@@ -44,8 +44,8 @@ app.get('/api/ingatlan', async (req, res) => {
 });
 
 
-// POST /api/ingatlan
-app.post('/api/ingatlan', async (req, res) => {
+// POST /api/ujingatlan
+app.post('/api/ujingatlan', async (req, res) => {
     const { kategoria, elado, leiras, hirdetesDatuma, tehermentes, kepUrl, terulet, szobak, emeletek, koordinatak } = req.body;
 
 
