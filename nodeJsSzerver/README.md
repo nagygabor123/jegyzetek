@@ -4,11 +4,14 @@ Egy egyszerű REST API Node.js + Express környezetben, amely ingatlanok kezelé
 
 ---
 
-## Könyvtárak telepítése
+## Könyvtárak telepítése és futtatás
 
 ```bash
 npm init -y
 npm install express mysql2
+```
+```bash
+node main.js
 ```
 ---
 
