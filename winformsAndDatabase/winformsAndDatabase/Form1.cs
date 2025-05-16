@@ -48,13 +48,6 @@ namespace winformsAndDatabase
             reader.Close();
         }
 
-        private void kitolt(int index)
-        {
-            label2.Text = "Eladó neve: " + sellers[index].Name;
-            label4.Text = "Telefonszám: " + sellers[index].Phone;
-        }
-
-
         class Ad
         {
             public int Area;
@@ -136,10 +129,9 @@ namespace winformsAndDatabase
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listBox1.SelectedIndex;
-            if (index != -1)
-            {
-                kitolt(index);
-            }
+
+            label2.Text = "Eladó neve: " + sellers[index].Name;
+            label4.Text = "Telefonszám: " + sellers[index].Phone;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
