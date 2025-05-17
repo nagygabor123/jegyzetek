@@ -1,8 +1,12 @@
 #  REACT frontend
 
-Egy REACT alapú frontend az Ingatlan API-hoz. Táblázatban megjeleníti az ingatlanokat ahol törölni illetve új ingatlant lehet hozzáadni. 
+Egy **React alapú frontend alkalmazás**, amely az [Ingatlan API](https://github.com/nagygabor123/jegyzetek/tree/main/nodeJsSzerver) végpontjait használja.  
+Az alkalmazás képes:
 
----
+-  Az összes ingatlant megjeleníteni egy táblázatban.
+-  Ingatlan törlése egy gombnyomással.
+-  Új ingatlan hozzáadása űrlapon keresztül.
+
 
 ## Könyvtárak telepítése és futtatás
 ```bash
