@@ -1,9 +1,9 @@
 // main.js
 const express = require('express');
 const mysql = require('mysql2/promise');
-const cors = require('cors');
+const cors = require('cors'); // Csak akkor szükséges, ha a frontend és a backend különböző domain-en fut   
 const app = express();
-app.use(cors());
+app.use(cors());// Csak akkor szükséges, ha a frontend és a backend különböző domain-en fut
 app.use(express.json());
 
 const pool = mysql.createPool({
