@@ -44,6 +44,15 @@ app.get('/api/ingatlan', async (req, res) => {
     }
 });
 
+app.get('/api/kategoriak', async (req, res) => {
+    try {
+        const [rows] = await pool.query(`SELECT * FROM categories;`);
+        res.json(rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Szerverhiba');
+    }
+});
 
 // POST /api/ujingatlan
 app.post('/api/ujingatlan', async (req, res) => {
