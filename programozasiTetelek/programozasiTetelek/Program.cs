@@ -22,7 +22,7 @@ namespace programozasiTetelek
             #endregion
 
             #region Megszámolás tétel
-            Console.WriteLine("Megszámolás");
+            Console.WriteLine("\nMegszámolás");
             int c = 0;
             for (int i = 0; i < t.Length; i++)
                 if (t[i] < 5)
@@ -31,20 +31,19 @@ namespace programozasiTetelek
             Console.WriteLine("\t5-nél kisebb számok darabszáma: {0}", c);
             #endregion
 
-
             #region Eldöntés tétel
-            Console.WriteLine("Eldöntés 1");
+            Console.WriteLine("\nEldöntés 1");
             int ker = 5;
             bool van = false;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < t.Length; i++)
                 if (t[i] == ker)
                     van = true;
 
             Console.WriteLine("\tIgaz-e, hogy van 5-ös a tömbben?: {0}", van);
 
-            Console.WriteLine("Eldöntés 2");
+            Console.WriteLine("\nEldöntés 2");
             int a = 0;
-            while (a < n && t[a] != ker)
+            while (a < t.Length && t[a] != ker)
                 a++;
 
             if (a < n)
@@ -53,9 +52,8 @@ namespace programozasiTetelek
                 Console.WriteLine("\tNincs benne");
             #endregion
 
-
             #region Kiválasztás tétel
-            Console.WriteLine("Kiválasztás");
+            Console.WriteLine("\nKiválasztás");
             int b = 0;
             while (t[b] != ker)
                 b++;
@@ -63,11 +61,10 @@ namespace programozasiTetelek
             Console.WriteLine("\tAz 5-ös indexe: {0}", b);
             #endregion
 
-
             #region Keresés tétel
-            Console.WriteLine("Keresés");
+            Console.WriteLine("\nKeresés");
             int z = 0;
-            while (z < n && t[z] != ker)
+            while (z < t.Length && t[z] != ker)
                 z++;
 
             if (z < n)
@@ -77,38 +74,103 @@ namespace programozasiTetelek
             #endregion
 
             #region Kiválogatás tétel
-            Console.WriteLine("Kiválogatás");
-            int[] f = new int[n];
+            Console.WriteLine("\nKiválogatás");
+            int[] f = new int[t.Length];
 
             int j = 0;
-            for (int i = 0; i < n; i++)
-                if (t[i] < 5)  //Az 5-nél kisebb számokat válogatjuk
+            for (int i = 0; i < t.Length; i++)
+                if (t[i] < 5)  
                 {
                     f[j] = t[i];
                     j++;
                 }
 
-            Console.WriteLine("\tEredeti:");
-            for (int i = 0; i < n; i++)
+            Console.Write("\tEredeti: ");
+            for (int i = 0; i < t.Length; i++)
                 Console.Write("{0} ", t[i]);
             Console.WriteLine();
 
-            Console.WriteLine("\tKiválogatott:");
+            Console.Write("\tKiválogatott: ");
             for (int i = 0; i < j; i++)
                 Console.Write("{0} ", f[i]);
             Console.WriteLine();
             #endregion
 
-            #region valami
+            #region Szétválogatás tétel
+            Console.WriteLine("\nSzétválogatás");
+            int[] m = new int[t.Length];
+            int[] mm = new int[t.Length];
+
+            int jj = 0;
+            int k = 0;
+            for (int i = 0; i < t.Length; i++)
+                if (t[i] < 5)  //Az 5-nél kisebb számokat válogatjuk
+                {
+                    m[jj] = t[i];
+                    jj++;
+                }
+                else
+                {
+                    mm[k] = t[i];
+                    k++;
+                }
+
+            Console.Write("\tEredeti: ");
+            for (int i = 0; i < t.Length; i++)
+                Console.Write("{0} ", t[i]);
+            Console.WriteLine();
+
+            Console.Write("\tKiválogatott b: ");
+            for (int i = 0; i < jj; i++)
+                Console.Write("{0} ", m[i]);
+            Console.WriteLine();
+
+            Console.Write("\tKiválogatott c: ");
+            for (int i = 0; i < k; i++)
+                Console.Write("{0} ", mm[i]);
+            Console.WriteLine();
             #endregion
 
-            #region valami
+            #region Maximum kiválasztás tétel
+            Console.WriteLine("\nMaximum kiválasztás");
+            int max;
+
+            max = t[0];
+            for (int i = 0; i < t.Length; i++)
+                if (t[i] > max)
+                    max = t[i];
+
+            Console.WriteLine("\tA legnagyobb elem: {0}", max);
             #endregion
 
-            #region valami
+            #region Minimum kiválasztás tétel
+            Console.WriteLine("\nMinimum kiválasztás");
+            int min;
+
+            min = t[0];
+            for (int i = 1; i < t.Length; i++)
+                if (t[i] < min)
+                    min = t[i];
+
+            Console.WriteLine("\tA legnagyobb elem: {0}", min);
+
             #endregion
 
-            #region valami
+            #region Buborék rendezés tétel
+            Console.WriteLine("\nBuborék rendezés");
+            for (int i = t.Length - 1; i > 0; i--)
+                for (int l = 0; l < i; l++)
+                    if (t[l] > t[l + 1])
+                    {
+                        int tmp = t[l + 1];
+                        t[l + 1] = t[l];
+                        t[l] = tmp;
+                    }
+
+            Console.Write("\t");
+            for (int i = 0; i < t.Length; i++)
+                Console.Write("{0} ", t[i]);
+            Console.WriteLine();
             #endregion
 
             Console.ReadKey();
