@@ -14,6 +14,7 @@ Az alkalmazás képes:
 npx create-next-app@latest abl-frontend --typescript
 cd abl-frontend
 npm install
+```
 ```bash
 npm run dev
 ```
